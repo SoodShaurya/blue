@@ -15,13 +15,37 @@ struct OnboardingView: View {
     @State private var imageOffset = CGSize.zero
     @State private var indicatorOpacity: Double = 1.0
     @State private var textTitle = "Blue."
+    @State private var Cube: String = ""
+    
+    func animationSpeed(){
+        var index = 1
+        //lower withTimeInterval if it's too laggy
+        Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true){(Timer) in
+            if(index < 10){
+                Cube = "Cube000\(index)"
+            }
+            else if (index > 10 && index < 100){
+                Cube = "Cube00\(index)"
+            }
+            else if (index > 100){
+                Cube = "Cube0\(index)"
+            }
+            index += 1
+            //lower the index value if you lowered withTimeInterval (proportionally)
+            //also delete the correct amount of images from the folder
+            //if there are images 1 2 3 4 5, and you want to remove 2, remove 2 and 4, not 1 and 5
+            if (index > 250){
+                index = 1
+            }
+        }
+    }
     
     let hapticFeedback = UINotificationFeedbackGenerator()
     
     // MARK: - Body
     var body: some View {
         ZStack {
-            Color("ColorBlue")
+            Color.teal
                 .ignoresSafeArea(.all, edges: .all)
             
             VStack(spacing: 20) {
@@ -52,10 +76,12 @@ struct OnboardingView: View {
                         .offset(x: imageOffset.width * -1)
                         .blur(radius: abs(imageOffset.width / 5))
                         .animation(.easeOut(duration: 1), value: imageOffset)
-                    
-                    Image("camera")
+                
+                    Image(Cube)
                         .resizable()
-                        .frame(width: 300, height: 300)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 500, height: 500, alignment: .center)
+                        .onAppear(perform: animationSpeed)
                         //.scaledToFit()
                         .opacity(isAnimating ? 1 : 0)
                         .animation(.easeOut(duration: 0.5), value: isAnimating)
@@ -92,6 +118,7 @@ struct OnboardingView: View {
                         .opacity(isAnimating ? 1 : 0)
                         .animation(.easeOut(duration: 1).delay(1), value: isAnimating)
                         .opacity(indicatorOpacity)
+                        .padding(.bottom, 90.0)
                     ,
                     alignment: .bottom
                 )
@@ -100,7 +127,7 @@ struct OnboardingView: View {
                 // MARK: - Footer
                 ZStack {
                     Capsule()
-                        .fill(.white.opacity(0.2))
+                        .fill(Color("ColorBlue"))
                     Capsule()
                         .fill(.white.opacity(0.2))
                         .padding(8)
@@ -165,7 +192,7 @@ struct OnboardingView: View {
             }
         }.onAppear {
             isAnimating = true
-        }.preferredColorScheme(.dark)
+        }.preferredColorScheme(.light)
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10E5649D29E5DF77007390EB /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E5649C29E5DF77007390EB /* ScannerView.swift */; };
 		8A0199AC29E5D1DB00979309 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0199AB29E5D1DB00979309 /* OnboardingView.swift */; };
 		8A0199AE29E5D23F00979309 /* CircleGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0199AD29E5D23F00979309 /* CircleGroupView.swift */; };
 		8A0199B029E5D25700979309 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0199AF29E5D25700979309 /* HomeView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10E5649C29E5DF77007390EB /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		8A0199AB29E5D1DB00979309 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8A0199AD29E5D23F00979309 /* CircleGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGroupView.swift; sourceTree = "<group>"; };
 		8A0199AF29E5D25700979309 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				8A0EE3AF29E51C1D00C2FCEA /* ContentView.swift */,
 				8A0199AB29E5D1DB00979309 /* OnboardingView.swift */,
 				8A0199AF29E5D25700979309 /* HomeView.swift */,
+				10E5649C29E5DF77007390EB /* ScannerView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				8A0199AC29E5D1DB00979309 /* OnboardingView.swift in Sources */,
 				8A0EE3B029E51C1D00C2FCEA /* ContentView.swift in Sources */,
 				8A0199AE29E5D23F00979309 /* CircleGroupView.swift in Sources */,
+				10E5649D29E5DF77007390EB /* ScannerView.swift in Sources */,
 				8A0199B029E5D25700979309 /* HomeView.swift in Sources */,
 				8A0EE3AE29E51C1D00C2FCEA /* BlueApp.swift in Sources */,
 			);

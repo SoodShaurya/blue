@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            if isOnboardingViewActive {
+            if (isOnboardingViewActive == true) {
                 OnboardingView()
             } else {
                 HomeView()
