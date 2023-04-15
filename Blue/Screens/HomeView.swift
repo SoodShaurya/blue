@@ -16,16 +16,28 @@ struct HomeView: View {
             VStack(spacing: 20) {
                 
                 // MARK: - Header
+                NavigationLink(destination: MemoryView()){
+                    HStack{
+                        Spacer()
+                        Image("thoughtbubble")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:100,height:100)
+                            .padding(.top, 30.0)
+                    }
+                }
                 Spacer()
                 ZStack {
                     CircleGroupView(shapeColor: .gray, shapeOpacity: 0.1)
-                    Image("camera")
+                        .padding(.top, 80.0)
+                    //How about put the previous scan here?
+                   /* Image("camera")
                         .resizable()
                         .scaledToFit()
-                        .padding()
+                        .padding(.top, 80.0)
                         .offset(y: isAnimating ? 35 : -35)
                         .animation(Animation.easeOut(duration: 4).repeatForever(), value: isAnimating
-                        )
+                        )*/
                 }
                 
                 // MARK: - Center
@@ -34,16 +46,18 @@ struct HomeView: View {
                     .fontWeight(.light)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
-                    .padding()
+                    .padding(.top,100.0)
                 
                 // MARK: - Footer
                 Spacer()
                 
                 NavigationLink(destination:ScannerView()){
                     Image("camera")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width:70,height:70)
+                       .resizable()
+                       .scaledToFit()
+                       .frame(width:120,height:120)
+                       
+                       
                 }
                 
                 .onAppear {
